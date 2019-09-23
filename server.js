@@ -8,8 +8,24 @@ let app = express();
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send("Hello World");
+    res.send("Hello world ");
 })
+
+app.get('/hello', (req, res) => {
+    console.log(req.query.nom);
+
+    if(req.query.nom)
+    {
+        res.send("Bonjour, " + req.query.nom)
+    }
+    else{
+        res.send("Quel est votre nom ? ");
+    
+    }
+    
+
+})
+
 
 app.post('/chat', (req, res) => {
     obj = JSON.parse(JSON.stringify(req.body,null," "));
