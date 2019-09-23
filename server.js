@@ -29,7 +29,7 @@ app.get('/hello', (req, res) => {
 
 app.post('/chat', (req, res) => {
     obj = JSON.parse(JSON.stringify(req.body,null," "));
-
+    console.log(obj)
     if(obj.msg === "ville"){
         res.send("Nous sommes a Paris");
     }
