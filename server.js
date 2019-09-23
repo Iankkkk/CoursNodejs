@@ -30,10 +30,10 @@ app.get('/hello', (req, res) => {
 app.post('/chat', (req, res) => {
     obj = JSON.parse(JSON.stringify(req.body,null," "));
 
-    if(obj.msg == "ville"){
+    if(obj.msg === "ville"){
         res.send("Nous sommes a Paris");
     }
-    if(obj.msg == "meteo"){
+    if(obj.msg === "meteo"){
         res.send("Il fait beau aujourd'hui");
     }
 
